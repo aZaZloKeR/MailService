@@ -13,11 +13,11 @@ public class MailServiceApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(MailServiceApplication.class, args);
     }
-
+/*
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder)
     {
         return builder.sources(MailServiceApplication.class);
-    }
+    }*/
 
 }

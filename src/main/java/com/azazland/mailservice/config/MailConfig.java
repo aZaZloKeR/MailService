@@ -21,8 +21,6 @@ public class MailConfig {
     private String port;
     @Value("${spring.mail.protocol}")
     private String protocol;
-    @Value("${server.ssl.protocol}")
-    private String tls;
 
     //не делаю бином, так как хочу пересоздавать каждый раз, что бы настройки SMTP сервера изменялись динамически
     public JavaMailSender getMailSender(){
@@ -31,7 +29,7 @@ public class MailConfig {
         Properties prop = mailSender.getJavaMailProperties();
         //prop.setProperty("mail.smtp.starttls.enable","true");
         prop.setProperty("mail.transport.protocol",protocol);
-        prop.setProperty("mail.smtp.ssl.protocols",tls);
+        prop.setProperty("mail.smtp.ssl.protocols","TLSv1.2");
 
         mailSender.setHost(host);
         mailSender.setPort(Integer.parseInt(port));
